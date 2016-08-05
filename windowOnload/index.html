@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <title>loading-test</title>
+</head>
+<style>
+	#loading-wrap{
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background:#000;
+	}
+	.loading{
+		position:fixed;
+		width:30px;
+		height:30px;
+		transform:translate(-50%,-50%);
+		left:50%;
+		top:50%;
+		border:5px solid #fff;
+		border-radius:50%;
+		border-top:5px solid #000;
+		animation:rotate 1s linear infinite;
+	}
+	@keyframes rotate{
+		0%{
+			transform:translate(-50%,-50%) rotateZ(0deg);
+		}
+		100%{
+			transform:translate(-50%,-50%) rotateZ(360deg);
+		}
+	}
+
+</style>
+<script>
+	window.onload = function(){
+		var body = document.getElementsByTagName('body')[0],
+			loadingWrap = document.getElementById('loading-wrap');
+		console.log($);
+		body.removeChild(loadingWrap);
+ }
+</script>
+
+<body>
+	<div id="loading-wrap">
+		<div class="loading"></div>
+	</div>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.4.0/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.4.0/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.4.1/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.4.2/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.4.3/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.4.4/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.5.1/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.6.1/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.1.0/core.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/3.0.0/core.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.3.2/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.3.1/jquery.js"></script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/1.3.0/jquery.js"></script>
+</body>
+
+</html>
