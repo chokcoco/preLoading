@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+    <title>loading-test</title>
+</head>
+<style>
+	#loading-wrap{
+		position:fixed;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		background:#000;
+	}
+	#loading{
+		position:fixed;
+		width:50px;
+		line-height:50px;
+		text-align:center;
+		color:#fff;
+		transform:translate(-50%,-50%);
+		left:50%;
+		top:50%;
+		border-radius:50%;
+		
+	}
+	#loading::after{
+		content:"";
+		position:absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom:0;
+		border:5px solid #fff;
+		border-radius:50%;
+		border-top:5px solid #000;
+		animation:rotate 1s linear infinite;
+	}
+	@keyframes rotate{
+		100%{
+			transform:translate(0%, 0%) rotateZ(360deg);
+		}
+	}
+
+</style>
+<body>
+	<div id="loading-wrap">
+		<div id="loading">0%</div>
+	</div>
+	<img src="http://img.kongzhong.com/photos/20131204/f47454d1d3_1386146541.jpg">
+	<img src="http://qun.dxddcx.com/d/file/lutuwu/2015-03-22/1a289fbb013916964faec0b2947bbf6d.jpg">
+	<img src="http://upfile.cat898.com/UploadFile/2009-8/20098971924595.jpg">
+	<img src="http://www.deskcar.com/desktop/fengjing/20125700336/12.jpg">
+	<img src="http://fujian.djtz.net/forum/201305/22/142831dajp0qws0aus95w7.jpg">
+	<img src="http://imgsrc.baidu.com/baike/pic/item/6a600c338744ebf84c8aa25fdbf9d72a6159a7d3.jpg">
+	<img src="http://image78.360doc.com/DownloadImg/2014/09/2603/45611063_16.jpg">
+	<img src="http://img4.178.com/hots/201602/250195644528/250196383340.jpg">
+	<img src="http://image68.360doc.com/DownloadImg/2014/01/1422/38275027_15.jpg">
+	<script>
+		var
+			body =  document.getElementsByTagName('body')[0],
+			arrImg = document.getElementsByTagName('img'),
+			loadingWrap = document.getElementById('loading-wrap'),
+			loadingWrod = document.getElementById('loading'),
+			length = 	arrImg.length,
+			i = 0,
+			j = 0;
+
+		for(; i<length; i++){
+			var elem = arrImg[i];
+			elem.onload = callback;
+		}
+
+		function callback(){
+			j++;
+			loadingWrod.innerText = (parseInt(j / length * 100)) + '%';
+
+			// 所以图片加载完毕
+			if(j == length){
+				body.removeChild(loadingWrap);
+			}
+		}
+	</script>
+	<script type="text/javascript" src="http://cdn.bootcss.com/jquery/2.0.1/jquery.js"></script>
+</body>
+
+</html>
