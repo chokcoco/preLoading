@@ -1,5 +1,5 @@
-# preLoading
-页面的预加载方案，各类预加载方法示例
+# preLoading -- 预加载
+页面的预加载方案，各类预加载方法示例。
 
 ## 使用 window.onload 事件
 将 loading page 写在一个 div 块中，并放在 body 内容的最前面，这样 loading page 将最先被解析。
@@ -17,7 +17,7 @@ window.onload = function(){
 	body.removeChild(loadingWrap);
 }
 ```
- 
+
 ## 百分比效果 loading
 
 实现百分比进度提示的关键在于首先获得需要预加载文件的总大小，然后实时显示 `加载完毕的文件/需要预加载文件` 总大小。
